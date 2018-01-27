@@ -11,6 +11,7 @@
 
 # Video (replace with the path and file name of your video)
 video_path="/home/pi/share/Video/$(ls /home/pi/share/Video/ | head -n 1)"
+echo "Using file: $video_path"
 
 # Start displaying the video loop
 case "$1" in
