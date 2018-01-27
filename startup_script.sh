@@ -10,6 +10,6 @@ then
 else
     echo ""
     echo "Starting video..."
-    /home/pi/share/Setup/videoloop start 
+    ./videoloop start
     echo "Done."
 fi

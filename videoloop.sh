@@ -15,7 +15,6 @@ video_path="/home/pi/share/Video/$(ls /home/pi/share/Video/ | head -n 1)"
 # Start displaying the video loop
 case "$1" in
     start) # Start displaying the video loop 
-        # screen -dmS videoloop sh -c "omxplayer -o both $video_path -b --loop --no-osd"
         omxplayer -o both "$video_path" -b --loop --no-osd
         echo "Video Playback Started"
     ;;
@@ -28,7 +27,7 @@ case "$1" in
     repair) # Restart video loop if it died
         if !(ps -a | grep omx -q)
         then
-        # screen -dmS videoloop sh -c "omxplayer -o local $video_path -b --loop --no-osd"
+        sudo killall omxplayer.bin
         omxplayer -o both "$video_path" -b --loop --no-osd
         echo "The Video is now running"
         fi
