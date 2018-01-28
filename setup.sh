@@ -52,7 +52,11 @@ else
 	EOT
 fi
 echo "Please enter a password for the samba share:"
-smbpasswd -a pi
+until smbpasswd -a pi
+do
+	echo "Try again please (press ctrl+c twice fast to skip)."
+	sleep 1
+done
 echo "Ok, restarting samba..."
 /etc/init.d/samba restart
 
