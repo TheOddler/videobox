@@ -35,7 +35,7 @@ case "$1" in
     ;;
 
     *)
-        echo "Usage: /etc/init.d/videoloop {start|stop|repair}"
+        echo "Usage: /boot/videoloop {start|stop|repair}"
         exit 1
     ;;
 esac

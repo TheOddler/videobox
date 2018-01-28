@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "My ip address: "
-sudo ip addr show
-
 if read -r -s -n 1 -t 10 -p "Starting video in 10 seconds. Press enter to abort." key
 then
     echo ""
@@ -10,6 +7,6 @@ then
 else
     echo ""
     echo "Starting video..."
-    ./videoloop start
+    /boot/videoloop.sh start
     echo "Done."
 fi
