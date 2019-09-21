@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Helpful links:
-#   Interface for raspi-config: https://github.com/raspberrypi-ui/rc_gui/blob/master/src/rc_gui.c#L23-L70
-#       -> Has examples of non-interactive commands for raspi-config
-#    raspi-config source: https://github.com/asb/raspi-config/blob/master/raspi-config
+#    raspi-config source: https://github.com/RPi-Distro/raspi-config
 
 # Privilidges required
 if [ "$EUID" -ne 0 ]
@@ -83,5 +81,9 @@ chmod 755 "/boot/videoloop.sh"
 
 # Done
 echo "Done :D"
-echo "Now restart the pi to start playing a video (sudo reboot)."
-echo "But you should probably change the pi's password now first..."
+echo ""
+echo "IP info: (sudo ip addr show)"
+ip addr show
+echo ""
+echo "Now you can add a video to the share/Video folder."
+echo "Then restart the pi to start playing the video (sudo reboot)."
