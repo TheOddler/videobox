@@ -9,54 +9,13 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-# Enable ssh
-echo "Enabling ssh..."
-raspi-config nonint do_ssh 0 # 0 = enable
-
-# Expand filesystem so it uses the whole sd card
-echo "Expanding filesystem..."
-raspi-config nonint do_expand_rootfs
-
 # Updates
 echo "Updating aptget..."
 apt-get -q -y update
-apt-get -q -y dist-upgrade
 
-# Install omxplayer
-echo "Installing omxplayer..."
-apt-get -q -y install omxplayer
-
-# Install samba
-echo "Installing samba..."
-apt-get -q -y install samba samba-common-bin
-mkdir -p -m 1777 /home/pi/share/Video
-echo "Setting up share..."
-if grep -Fxq "[share]" /etc/samba/smb.conf
-then
-	echo "Share already setup."
-else
-	cat <<-EOT >> /etc/samba/smb.conf
-
-	[share]
-	Comment = Pi shared folder
-	Path = /home/pi/share
-	Browseable = yes
-	Writeable = Yes
-	only guest = no
-	create mask = 0777
-	directory mask = 0777
-	Public = yes
-	Guest ok = yes
-	EOT
-fi
-echo "Please enter a password for the samba share:"
-until smbpasswd -a pi
-do
-	echo "Try again please (press ctrl+c twice fast to skip)."
-	sleep 1
-done
-echo "Ok, restarting samba..."
-/etc/init.d/samba restart
+# Install vlc
+echo "Installing vlc..."
+apt-get -q -y install vlc
 
 # Enable autologin to CLI
 echo "Enabling autologin..."
