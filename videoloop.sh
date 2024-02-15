@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Video (replace with the path and file name of your video)
-video_path=~/Videobox/
-echo "Using file: $video_path"
+video_paths=(~/Videobox/ ~/Video ~/Videos ~/Video\'s /boot/Videobox /boot/Video /boot/Videos /boot/Video\'s)
+
+echo "Using files in the following folders: ${video_paths[@]}"
 
 # Start displaying the video loop
 case "$1" in
     start) # Start displaying the video loop
-        mpv --fs --loop-playlist=inf --ontop $video_path
+        mpv --fs --loop-playlist=inf --ontop --no-resume-playback ${video_paths[@]}
         echo "Video Playback Started"
     ;;
 
@@ -20,7 +21,7 @@ case "$1" in
         if !(ps -a | grep omx -q)
         then
         sudo killall mpv
-        mpv --fs --loop-playlist=inf --ontop $video_path
+        mpv --fs --loop-playlist=inf --ontop --no-resume-playback ${video_paths[@]}
         echo "The Video is now running"
         fi
     ;;

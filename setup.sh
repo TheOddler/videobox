@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -x
 
 # Helpful links:
 #    raspi-config source: https://github.com/RPi-Distro/raspi-config

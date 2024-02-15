@@ -5,7 +5,6 @@ Some scripts for a simple raspberry pi video box.
 ## Usage
 
 1. Install raspbian on an sd card
-   - Optionally enable SSH and WiFi
 2. Copy all files to the boot partition on the sd card
 3. Start the pi with the sd card
    - Make sure it is connected to the internet
@@ -14,7 +13,14 @@ Some scripts for a simple raspberry pi video box.
    - Maybe you'll have to set permissions: `sudo chmod +x /boot/setup.sh`
    - Enter a samba password when asked
    - This can take a while...
-6. Now on the network the pi should show up, place your video in the ~/Videobox folder
+6. Shutdown the pi `sudo shutdown now`
+7. Insert the sd card back into your own computer, and place videos in the rootfs's Videos folder.
+   - You can also place videos in the boot partition, but there's not much space
+   - If you're on mac you'll need to install some stuff to be able to read the root partition:
+     - https://brew.sh/
+     - brew cask install osxfuse
+     - brew install ext4fuse
+8. Put sd card back into the pi and start
 
 Now on boot the pi will play the videos.
 
