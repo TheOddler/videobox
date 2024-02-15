@@ -1,26 +1,26 @@
 #!/bin/bash
 
 # Video (replace with the path and file name of your video)
-video_path="~/Videos/"
+video_path=~/Videobox/
 echo "Using file: $video_path"
 
 # Start displaying the video loop
 case "$1" in
     start) # Start displaying the video loop
-        vlc --fullscreen --video-on-top --no-video-title-show --no-osd --loop "$video_path"
+        mpv --fs --loop-playlist=inf --ontop $video_path
         echo "Video Playback Started"
     ;;
 
     stop) # Stop displaying video loop 
-        sudo killall vlc.bin
+        sudo killall mpv
         echo "Video Playback Stopped"
     ;;
 
     repair) # Restart video loop if it died
         if !(ps -a | grep omx -q)
         then
-        sudo killall vlc.bin
-        vlc --fullscreen --video-on-top --no-video-title-show --no-osd --loop "$video_path"
+        sudo killall mpv
+        mpv --fs --loop-playlist=inf --ontop $video_path
         echo "The Video is now running"
         fi
     ;;

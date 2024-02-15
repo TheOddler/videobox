@@ -13,9 +13,9 @@ fi
 echo "Updating aptget..."
 apt-get -q -y update
 
-# Install vlc
-echo "Installing vlc..."
-apt-get -q -y install vlc
+# Install mpv
+echo "Installing mpv..."
+apt-get -q -y install mpv
 
 # Enable autologin to CLI
 echo "Enabling autologin..."
@@ -23,11 +23,11 @@ raspi-config nonint do_boot_behaviour B2 # B2 is CLI automatic login
 
 # Make sure startup_script is run at login
 echo "Setting startup_script to run at login..."
-if grep -Fq "/boot/startup_script.sh" /home/pi/.bashrc
+if grep -Fq "/boot/startup_script.sh" ~/.bashrc
 then
 	echo "Startup script already running at login."
 else
-	sudo bash -c 'cat <<-EOT >> /home/pi/.bashrc
+	sudo bash -c 'cat <<-EOT >> ~/.bashrc
 
 	/boot/startup_script.sh
 	EOT'
@@ -38,11 +38,14 @@ echo "Updating permissions..."
 chmod 755 "/boot/startup_script.sh"
 chmod 755 "/boot/videoloop.sh"
 
+# Creating videobox folder
+mkdir -p ~/Videobox
+
 # Done
 echo "Done :D"
 echo ""
 echo "IP info: (ip addr show)"
 ip addr show
 echo ""
-echo "Now you can add a video to the ~/Videos folder."
+echo "Now you can add a video to the ~/Videobox folder."
 echo "Please restart the pi to start playing the videos (sudo reboot)."
