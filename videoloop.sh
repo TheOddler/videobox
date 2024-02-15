@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Video (replace with the path and file name of your video)
-video_path="/boot/Video/"
+video_path="~/Videos/"
 echo "Using file: $video_path"
 
 # Start displaying the video loop

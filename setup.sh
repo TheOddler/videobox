@@ -41,8 +41,8 @@ chmod 755 "/boot/videoloop.sh"
 # Done
 echo "Done :D"
 echo ""
-echo "IP info: (sudo ip addr show)"
+echo "IP info: (ip addr show)"
 ip addr show
 echo ""
-echo "Now you can add a video to the share/Video folder."
-echo "Then restart the pi to start playing the video (sudo reboot)."
+echo "Now you can add a video to the ~/Videos folder."
+echo "Please restart the pi to start playing the videos (sudo reboot)."
