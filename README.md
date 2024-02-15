@@ -14,7 +14,7 @@ Some scripts for a simple raspberry pi video box.
    - Maybe you'll have to set permissions: `sudo chmod +x /boot/setup.sh`
    - Enter a samba password when asked
    - This can take a while...
-6. Now on the network the pi should show up, place your video in the ~/Videos folder
+6. Now on the network the pi should show up, place your video in the ~/Videobox folder
 
 Now on boot the pi will play the videos.
 
