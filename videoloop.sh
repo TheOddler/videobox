@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Video (replace with the path and file name of your video)
-video_paths=(~/Videobox/ ~/Video ~/Videos ~/Video\'s /boot/Videobox /boot/Video /boot/Videos /boot/Video\'s)
+video_paths=(~/Videobox/ ~/Video ~/Videos ~/Video\'s)
 
 echo "Using files in the following folders: ${video_paths[@]}"
 
@@ -27,7 +27,7 @@ case "$1" in
     ;;
 
     *)
-        echo "Usage: /boot/videoloop {start|stop|repair}"
+        echo "Usage: /boot/firmware/videoloop {start|stop|repair}"
         exit 1
     ;;
 esac

@@ -7,6 +7,6 @@ then
 else
     echo ""
     echo "Starting video..."
-    /boot/videoloop.sh start
+    /boot/firmware/videoloop.sh start
     echo "Done."
 fi

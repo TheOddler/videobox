@@ -9,8 +9,8 @@ Some scripts for a simple raspberry pi video box.
 3. Start the pi with the sd card
    - Make sure it is connected to the internet
 4. Log in
-5. Run `sudo /boot/setup.sh`
-   - Maybe you'll have to set permissions: `sudo chmod +x /boot/setup.sh`
+5. Run `sudo /boot/firmware/setup.sh`
+   - Maybe you'll have to set permissions: `sudo chmod +x /boot/firmware/setup.sh`
    - Enter a samba password when asked
    - This can take a while...
 6. Shutdown the pi `sudo shutdown now`

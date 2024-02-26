@@ -24,20 +24,20 @@ raspi-config nonint do_boot_behaviour B2 # B2 is CLI automatic login
 
 # Make sure startup_script is run at login
 echo "Setting startup_script to run at login..."
-if grep -Fq "/boot/startup_script.sh" ~/.bashrc
+if grep -Fq "/boot/firmware/startup_script.sh" ~/.bashrc
 then
 	echo "Startup script already running at login."
 else
 	sudo bash -c 'cat <<-EOT >> ~/.bashrc
 
-	/boot/startup_script.sh
+	/boot/firmware/startup_script.sh
 	EOT'
 fi
 
 # Updating permissions
 echo "Updating permissions..."
-chmod 755 "/boot/startup_script.sh"
-chmod 755 "/boot/videoloop.sh"
+chmod 755 "/boot/firmware/startup_script.sh"
+chmod 755 "/boot/firmware/videoloop.sh"
 
 # Creating videobox folder
 mkdir -p ~/Videobox
