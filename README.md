@@ -11,7 +11,6 @@ Some scripts for a simple raspberry pi video box.
 4. Log in
 5. Run `sudo /boot/firmware/setup.sh`
    - Maybe you'll have to set permissions: `sudo chmod +x /boot/firmware/setup.sh`
-   - Enter a samba password when asked
    - This can take a while...
 6. Shutdown the pi `sudo shutdown now`
 7. Insert the sd card back into your own computer, and place videos in the **rootfs**'s Videos folder.
