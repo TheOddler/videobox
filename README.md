@@ -14,12 +14,8 @@ Some scripts for a simple raspberry pi video box.
    - Enter a samba password when asked
    - This can take a while...
 6. Shutdown the pi `sudo shutdown now`
-7. Insert the sd card back into your own computer, and place videos in the rootfs's Videos folder.
-   - You can also place videos in the boot partition, but there's not much space
-   - If you're on mac you'll need to install some stuff to be able to read the root partition:
-     - https://brew.sh/
-     - brew cask install osxfuse
-     - brew install ext4fuse
+7. Insert the sd card back into your own computer, and place videos in the **rootfs**'s Videos folder.
+   - If you're on mac you'll need to install some extFS for Mac so you can read the linux partitions: https://www.paragon-software.com/home/extfs-mac/#
 8. Put sd card back into the pi and start
 
 Now on boot the pi will play the videos.
